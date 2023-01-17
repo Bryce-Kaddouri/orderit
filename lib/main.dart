@@ -63,6 +63,13 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       title: 'Order It',
       debugShowCheckedModeBanner: false,
+      theme: // ThemeData(
+          // primarySwatch: Colors.blue,
+          // ),
+          ThemeData(
+        primarySwatch: Colors.orange,
+        visualDensity: VisualDensity.adaptivePlatformDensity,
+      ),
       home: Scaffold(
           appBar: AppBar(
             toolbarHeight: 60,
@@ -89,53 +96,51 @@ class _MyAppState extends State<MyApp> {
           bottomNavigationBar: SizedBox(
             height: 70,
             child: BottomNavigationBar(
-              landscapeLayout: BottomNavigationBarLandscapeLayout.centered,
               onTap: (int index) {
                 SetCurrentIndex(index);
               },
               currentIndex: _selectedIndex,
               type: BottomNavigationBarType.fixed,
-              items: [
-                const BottomNavigationBarItem(
+              items: const [
+                BottomNavigationBarItem(
                   icon: Icon(Icons.home),
                   label: 'Home',
                   tooltip: '',
                 ),
-                const BottomNavigationBarItem(
+                BottomNavigationBarItem(
                   icon: Icon(Icons.favorite_border),
                   label: 'Favourites',
                   tooltip: '',
                 ),
+
                 BottomNavigationBarItem(
-                  icon: IconButton(
-                      style: IconButton.styleFrom(
-                        foregroundColor: Colors.white,
-                        backgroundColor: const Color.fromRGBO(246, 125, 50, 1),
-                      ),
-                      onPressed: null,
-                      icon: const Icon(
-                        Icons.add,
-                      )),
+                  icon: Icon(
+                    Icons.add,
+                  ),
                   label: 'New Order',
                   tooltip: '',
                 ),
                 // button new order floating button in the middle of the bottom navigation bar
-                const BottomNavigationBarItem(
+                BottomNavigationBarItem(
                   backgroundColor: Color.fromRGBO(246, 125, 50, 1),
                   icon: Icon(
                     Icons.article_outlined,
-                    color: Color.fromRGBO(33, 33, 33, 1),
                   ),
                   label: 'Orders',
                   tooltip: '',
                 ),
-                const BottomNavigationBarItem(
+                BottomNavigationBarItem(
                   icon: Icon(Icons.account_circle_rounded),
                   label: 'Profile',
                   tooltip: '',
                 ),
               ],
               selectedItemColor: Colors.amber[900],
+              selectedLabelStyle: const TextStyle(
+                color: Color.fromRGBO(255, 111, 0, 1),
+                fontSize: 12,
+                fontWeight: FontWeight.w500,
+              ),
               unselectedItemColor: const Color.fromRGBO(33, 33, 33, 1),
               selectedIconTheme: const IconThemeData(
                 color: Color.fromRGBO(255, 111, 0, 1),
