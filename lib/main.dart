@@ -95,60 +95,132 @@ class _MyAppState extends State<MyApp> {
           ][_selectedIndex],
           bottomNavigationBar: SizedBox(
             height: 70,
-            child: BottomNavigationBar(
-              onTap: (int index) {
-                SetCurrentIndex(index);
-              },
-              currentIndex: _selectedIndex,
-              type: BottomNavigationBarType.fixed,
-              items: const [
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.home),
-                  label: 'Home',
-                  tooltip: '',
+            // prend toute la largeur de l'ecran
+            child: BottomAppBar(
+              // no margin between child of bottom app bar
+              child: SizedBox(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    MaterialButton(
+                      minWidth: 0,
+                      onPressed: () {
+                        SetCurrentIndex(0);
+                      },
+                      child: Container(
+                        width: 50,
+                        height: 60,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.home,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Home',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    MaterialButton(
+                      minWidth: 0,
+                      onPressed: () {},
+                      child: Container(
+                        height: 60,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.favorite_border_outlined,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Favourites',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    MaterialButton(
+                      onPressed: () {},
+                      child: // rectangle with rounded corners, add icon new order text under the icon and when you click on the icon it will take you to the new order page
+                          Container(
+                        width: 90,
+                        height: 60,
+                        decoration: BoxDecoration(
+                          color: Colors.amber[900],
+                          borderRadius: BorderRadius.circular(15),
+                        ),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.add,
+                              color: Colors.white,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'New Order',
+                              style: TextStyle(color: Colors.white),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    MaterialButton(
+                      minWidth: 0,
+                      onPressed: () {},
+                      child: Container(
+                        width: 50,
+                        height: 60,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.article_outlined,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Orders',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    MaterialButton(
+                      minWidth: 0,
+                      onPressed: () {},
+                      child: Container(
+                        width: 50,
+                        height: 60,
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            Icon(
+                              Icons.account_circle_rounded,
+                            ),
+                            SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              'Profile',
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                  ],
                 ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.favorite_border),
-                  label: 'Favourites',
-                  tooltip: '',
-                ),
-
-                BottomNavigationBarItem(
-                  icon: Icon(
-                    Icons.add,
-                  ),
-                  label: 'New Order',
-                  tooltip: '',
-                ),
-                // button new order floating button in the middle of the bottom navigation bar
-                BottomNavigationBarItem(
-                  backgroundColor: Color.fromRGBO(246, 125, 50, 1),
-                  icon: Icon(
-                    Icons.article_outlined,
-                  ),
-                  label: 'Orders',
-                  tooltip: '',
-                ),
-                BottomNavigationBarItem(
-                  icon: Icon(Icons.account_circle_rounded),
-                  label: 'Profile',
-                  tooltip: '',
-                ),
-              ],
-              selectedItemColor: Colors.amber[900],
-              selectedLabelStyle: const TextStyle(
-                color: Color.fromRGBO(255, 111, 0, 1),
-                fontSize: 12,
-                fontWeight: FontWeight.w500,
-              ),
-              unselectedItemColor: const Color.fromRGBO(33, 33, 33, 1),
-              selectedIconTheme: const IconThemeData(
-                color: Color.fromRGBO(255, 111, 0, 1),
-                opacity: 1.0,
-              ),
-              unselectedIconTheme: const IconThemeData(
-                color: Color.fromRGBO(33, 33, 33, 1),
-                opacity: 1.0,
               ),
             ),
           )),
