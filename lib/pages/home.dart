@@ -13,7 +13,6 @@ class _HomePageState extends State<HomePage> {
     // return a container with 2 columns and 2 rows inside it with a rectangle shape and a border radius of 20 and a color of white and a shadow of 5 and a padding of 20 and a margin of 20
     return Container(
       // background color of the container #f2efeb
-      color: const Color(0xFFF2EFEB),
       child: GridView.count(
         padding: const EdgeInsets.all(7),
 
@@ -32,9 +31,10 @@ class _HomePageState extends State<HomePage> {
               borderRadius: BorderRadius.circular(4),
               boxShadow: [
                 BoxShadow(
-                  color: Colors.grey.withOpacity(0.2),
-                  spreadRadius: 1,
-                  offset: const Offset(0, 1),
+                  color: Colors.grey.withOpacity(0.5),
+                  spreadRadius: 2,
+                  blurRadius: 5,
+                  offset: const Offset(0, 1), // changes position of shadow
                 ),
               ],
             ),

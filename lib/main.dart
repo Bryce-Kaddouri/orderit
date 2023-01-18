@@ -18,27 +18,37 @@ class MyApp extends StatefulWidget {
     Text(
       'Home',
       style: TextStyle(
-          color: Colors.black, fontSize: 30, fontWeight: FontWeight.w500),
+        color: Colors.black,
+        fontSize: 30,
+      ),
     ),
     Text(
       'Favourites',
       style: TextStyle(
-          color: Colors.black, fontSize: 30, fontWeight: FontWeight.w500),
+        color: Colors.black,
+        fontSize: 30,
+      ),
     ),
     Text(
       'New Order',
       style: TextStyle(
-          color: Colors.black, fontSize: 30, fontWeight: FontWeight.w500),
+        color: Colors.black,
+        fontSize: 30,
+      ),
     ),
     Text(
       'Orders',
       style: TextStyle(
-          color: Colors.black, fontSize: 30, fontWeight: FontWeight.w500),
+        color: Colors.black,
+        fontSize: 30,
+      ),
     ),
     Text(
       'Profile',
       style: TextStyle(
-          color: Colors.black, fontSize: 30, fontWeight: FontWeight.w500),
+        color: Colors.black,
+        fontSize: 30,
+      ),
     ),
   ];
 
@@ -54,6 +64,7 @@ class _MyAppState extends State<MyApp> {
   SetCurrentIndex(int index) {
     setState(() {
       _selectedIndex = index;
+      print(_selectedIndex);
     });
   }
 
@@ -73,16 +84,6 @@ class _MyAppState extends State<MyApp> {
       home: Scaffold(
           appBar: AppBar(
             toolbarHeight: 60,
-            flexibleSpace: Container(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: <Color>[
-                    Color.fromRGBO(255, 194, 48, 1),
-                    Color.fromRGBO(255, 127, 2, 1),
-                  ],
-                ),
-              ),
-            ),
             title: MyApp.appbarTitle.elementAt(_selectedIndex),
             centerTitle: true,
           ),
@@ -106,10 +107,9 @@ class _MyAppState extends State<MyApp> {
                       minWidth: 0,
                       onPressed: () {
                         SetCurrentIndex(0);
+                        // chhange the color of the icon when you click on it and the text under it to orange
                       },
                       child: Container(
-                        width: 50,
-                        height: 60,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -128,9 +128,10 @@ class _MyAppState extends State<MyApp> {
                     ),
                     MaterialButton(
                       minWidth: 0,
-                      onPressed: () {},
+                      onPressed: () {
+                        SetCurrentIndex(1);
+                      },
                       child: Container(
-                        height: 60,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
@@ -148,7 +149,9 @@ class _MyAppState extends State<MyApp> {
                       ),
                     ),
                     MaterialButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        SetCurrentIndex(2);
+                      },
                       child: // rectangle with rounded corners, add icon new order text under the icon and when you click on the icon it will take you to the new order page
                           Container(
                         width: 90,
@@ -177,9 +180,10 @@ class _MyAppState extends State<MyApp> {
                     ),
                     MaterialButton(
                       minWidth: 0,
-                      onPressed: () {},
+                      onPressed: () {
+                        SetCurrentIndex(3);
+                      },
                       child: Container(
-                        width: 50,
                         height: 60,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -199,9 +203,10 @@ class _MyAppState extends State<MyApp> {
                     ),
                     MaterialButton(
                       minWidth: 0,
-                      onPressed: () {},
+                      onPressed: () {
+                        SetCurrentIndex(4);
+                      },
                       child: Container(
-                        width: 50,
                         height: 60,
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
